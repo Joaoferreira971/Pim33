@@ -9,9 +9,6 @@ namespace WinFormsApp1
     public class Controle
     {
         private string Nome;
-
-        public int Cpf { get; }
-
         private int CPF;
         private int Telefone;
         private string Email;
@@ -20,7 +17,7 @@ namespace WinFormsApp1
         public Controle(string nome, int cpf, int telefone, string email, int datanascimento)
         {
             this.Nome = nome;
-            this.Cpf = cpf;
+            this.CPF = cpf;
             this.Telefone = telefone;
             this.Email = email;
             this.Datanascimento = datanascimento;
@@ -29,10 +26,10 @@ namespace WinFormsApp1
         private void Executar()
         {
             this.mensagem = ""; 
-            Validacao validacao = new Validacao(Nome, Cpf, Telefone, Email, Datanascimento);
+            Validacao validacao = new Validacao(Nome, CPF, Telefone, Email, Datanascimento);
             if (validacao.Mensagem.Equals(""))
             {
-                Cadastro cadastro = new Cadastro(Nome, Cpf, Telefone, Email, Datanascimento);
+                Cadastro cadastro = new Cadastro(Nome, CPF, Telefone, Email, Datanascimento);
                 this.mensagem = cadastro.Mensagem;
             }
             else
